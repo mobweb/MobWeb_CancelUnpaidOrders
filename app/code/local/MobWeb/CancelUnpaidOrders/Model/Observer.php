@@ -7,8 +7,8 @@ class MobWeb_CancelUnpaidOrders_Model_Observer
 		// Get the settings
 		$this->cancelPaymentMethods = explode(',', Mage::getStoreConfig('cancelunpaidorders/settings/payment_methods'));
 		$this->cancelStatus = explode(',', Mage::getStoreConfig('cancelunpaidorders/settings/order_status'));
-		$this->expirationTime = Mage::getStoreConfig('cancelunpaidorders/settings/expiration_time_days')*24+Mage::getStoreConfig('cancelunpaidorders/settings/expiration_time_hours')*60*60;
-		$this->logFile = 'system.log';
+		$this->expirationTime = (Mage::getStoreConfig('cancelunpaidorders/settings/expiration_time_days')*24+Mage::getStoreConfig('cancelunpaidorders/settings/expiration_time_hours'))*60*60;
+		$this->logFile = 'mobweb.cancelunpaidorders.log';
 
 		// Check the settings
 		if(!count($this->cancelPaymentMethods) || !count($this->cancelStatus)) {
