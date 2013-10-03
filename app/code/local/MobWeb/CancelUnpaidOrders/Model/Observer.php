@@ -29,9 +29,9 @@ class MobWeb_CancelUnpaidOrders_Model_Observer
 		    try{
 		        $order = Mage::getModel('sales/order')->load($order->getId());
 		        if($order->canCancel()) {
-		            //$order->cancel();
-		            //$order->addStatusHistoryComment('Order automatically canceled', $order->getStatus());
-		        	//$order->save();
+		            $order->cancel();
+		            $order->addStatusHistoryComment('Order automatically canceled', $order->getStatus());
+		        	$order->save();
 		        }
 		        else {
 		        	// Unable to cancel order
