@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <MobWeb_CancelUnpaidOrders>
+            <version>0.1.0</version>
+        </MobWeb_CancelUnpaidOrders>
+    </modules>
+    <global>
+        <models>
+            <cancelunpaidorders>
+                <class>MobWeb_CancelUnpaidOrders_Model</class>
+            </cancelunpaidorders>
+        </models>
+        <helpers>
+            <cancelunpaidorders>
+                <class>MobWeb_CancelUnpaidOrders_Helper</class>
+            </cancelunpaidorders>
+        </helpers>
+    </global>
+    <frontend>
+        <events>
+            <catalog_product_load_after>
+                <observers>
+                    <cancelunpaidorders>
+                        <type>singleton</type>
+                        <class>cancelunpaidorders/observer</class>
+                        <method>cancelUnpaidOrders</method>
+                    </cancelunpaidorders>
+                </observers>
+            </catalog_product_load_after>
+        </events>
+    </frontend>
+    <default>
+        <sales>
+            <cancelunpaidorders>
+                <expiration_time_days>30</expiration_time_days>
+                <expiration_time_hours>0</expiration_time_hours>
+            </cancelunpaidorders>
+        </sales>
+    </default>
+    <crontab>
+        <jobs>
+            <cancelunpaidorders>
+                <schedule><cron_expr>*/5 * * * *</cron_expr></schedule>
+                <run><model>cancelunpaidorders/observer::cancelUnpaidOrders</model></run>
+            </cancelunpaidorders>
+        </jobs>
+    </crontab>
+</config>

@@ -1,0 +1,6 @@
+app/code/local/MobWeb/CancelUnpaidOrders app/code/local/MobWeb/CancelUnpaidOrders/
+
+app/etc/modules/MobWeb_CancelUnpaidOrders.xml app/etc/modules/MobWeb_CancelUnpaidOrders.xml
+
+# Clear the cache
+@shell   rm -rf $PROJECT/var/cache/* && echo "Magento Cache cleared"
