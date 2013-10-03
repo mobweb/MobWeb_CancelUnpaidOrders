@@ -3,7 +3,7 @@
   <sections>
     <cancelunpaidorders module="cancelunpaidorders">
       <tab>sales</tab>
-      <label>Unpaid Order Cancellation</label>
+      <label>Cancel Unpaid Orders</label>
       <sort_order>9001</sort_order>
       <show_in_default>1</show_in_default>
       <show_in_website>0</show_in_website>
