@@ -17,19 +17,6 @@
             </cancelunpaidorders>
         </helpers>
     </global>
-    <frontend>
-        <events>
-            <catalog_product_load_after>
-                <observers>
-                    <cancelunpaidorders>
-                        <type>singleton</type>
-                        <class>cancelunpaidorders/observer</class>
-                        <method>cancelUnpaidOrders</method>
-                    </cancelunpaidorders>
-                </observers>
-            </catalog_product_load_after>
-        </events>
-    </frontend>
     <default>
         <sales>
             <cancelunpaidorders>
