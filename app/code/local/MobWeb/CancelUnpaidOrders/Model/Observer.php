@@ -11,7 +11,7 @@ class MobWeb_CancelUnpaidOrders_Model_Observer
 		$this->logFile = 'system.log';
 
 		// Check the settings
-		if(!count($this->cancelPaymentMethods) || !count($this->cancelStatus) || !$this->expirationTime) {
+		if(!count($this->cancelPaymentMethods) || !count($this->cancelStatus)) {
 			Mage::log('Unable to cancel orders automatically, required settings missing', NULL, $this->logFile);
 			return;
 		}
